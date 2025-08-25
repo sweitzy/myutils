@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $Id: list_recipes.sh,v 1.7 2025/08/21 09:45:46 scott Exp scott $
+# $Id: list_recipes.sh,v 1.8 2025/08/25 19:55:34 scott Exp scott $
 
 # list_recipes -- use UNIX filesystem commands to create CSV files
 # like what I used to do with Awesome Table before the API stopped
@@ -43,11 +43,11 @@ echo "There are $NUM_RECIPES recipes."  >&2
 echo "There are $NUM_SHORTCUTS shortcuts." >&2 
 echo
 echo "New Recipes:"
-diff "$RECIPES_CSV" "$PREV_CSV"
+diff "$RECIPES_CSV" "$PREV_CSV" | grep -v "Folder\tTitle"
 echo
 
 # Save current csv so we can compare new one for new recipes.
-cp "$RECIPES_CSV" "$PREV_CSV"
+mv "$RECIPES_CSV" "$PREV_CSV"
 
 # Print next steps to stderr.
 echo "1. Open $RECIPES_CSV in Sheets."  >&2 
