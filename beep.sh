@@ -1,13 +1,19 @@
 #!/bin/bash
 
-# $Id: beep.sh,v 1.2 2025/09/04 03:02:14 scott Exp scott $
+# $Id: beep.sh,v 1.3 2025/09/08 19:41:55 scott Exp scott $
 
 # Initial version from ChatGPT: "write a bash script to beep the
 # terminal every 10 seconds for 5 minutes"
 
-# TODO: check command-line arguments
+if [ "$1" == "" -o "$2" == "" ]; then
+    echo Usage: $0 count interval
+    echo Example: $0 30 10
+    exit 1
+fi
+
 COUNT=$1
 DELAY=$2
+
 
 echo COUNT $COUNT, DELAY $DELAY
 
