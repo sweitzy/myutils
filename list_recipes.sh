@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# $Id: list_recipes.sh,v 1.9 2025/08/27 00:05:57 scott Exp scott $
+# $Id: list_recipes.sh,v 1.10 2026/01/06 04:24:25 scott Exp scott $
 
 # list_recipes -- use UNIX filesystem commands to create CSV files
 # like what I used to do with Awesome Table before the API stopped
@@ -54,7 +54,7 @@ echo "1. Open $RECIPES_CSV in Sheets from Safari, then select Open With->Sheets.
 echo "2. Select all cells. Change font to 9 point."
 echo "3. Change first row and first column text to Bold."
 echo "4. Move/copy Sheet from Recipes/_Staging/ to Recipes/."
-echo "5. Manually delete old files in Recipes and Recipes/_Staging."
+echo "5. Manually delete old files in Recipes and Recipes/_Staging (but not _Staging/MyRecipes.prev)."
 
 #echo "1. Open $RECIPES_CSV in Numbers on Mac."  >&2 
 #echo "2. Export as Excel file."  >&2
